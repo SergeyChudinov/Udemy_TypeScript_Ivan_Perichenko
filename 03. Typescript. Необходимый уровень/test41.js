@@ -1,0 +1,37 @@
+"use strict";
+var Status;
+(function (Status) {
+    Status["AVAILABLE"] = "available";
+    Status["NOT_AVAILABLE"] = "not available";
+})(Status || (Status = {}));
+function checkAnimalData(animal) {
+    if (isAvailable(animal)) {
+        return animal.data;
+    }
+    else {
+        return `${animal.data}, you can try in ${animal.data.nextUpdateIn}`;
+    }
+}
+function isAvailable(response) {
+    return response.status === Status.AVAILABLE;
+}
+const response = {
+    status: Status.AVAILABLE,
+    data: {
+        animal: 'dog',
+        breed: 'korgi',
+        sterilized: 'true',
+        location: 'Moscow',
+        age: 4,
+    },
+};
+const response2 = {
+    status: Status.NOT_AVAILABLE,
+    data: {
+        message: 'Свяжитесь с нами завтра',
+        nextUpdateIn: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+    },
+};
+console.log(checkAnimalData(response));
+console.log(checkAnimalData(response2));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdDQxLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGVzdDQxLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxJQUFLLE1BR0o7QUFIRCxXQUFLLE1BQU07SUFDVCxpQ0FBdUIsQ0FBQTtJQUN2Qix5Q0FBK0IsQ0FBQTtBQUNqQyxDQUFDLEVBSEksTUFBTSxLQUFOLE1BQU0sUUFHVjtBQXVCRCxTQUFTLGVBQWUsQ0FBQyxNQUFpQjtJQUN4QyxJQUFJLFdBQVcsQ0FBQyxNQUFNLENBQUMsRUFBRTtRQUN2QixPQUFPLE1BQU0sQ0FBQyxJQUFJLENBQUM7S0FDcEI7U0FBTTtRQUNMLE9BQU8sR0FBRyxNQUFNLENBQUMsSUFBSSxvQkFBb0IsTUFBTSxDQUFDLElBQUksQ0FBQyxZQUFZLEVBQUUsQ0FBQztLQUNyRTtBQUNILENBQUM7QUFDRCxTQUFTLFdBQVcsQ0FBQyxRQUFtQjtJQUN0QyxPQUFPLFFBQVEsQ0FBQyxNQUFNLEtBQUssTUFBTSxDQUFDLFNBQVMsQ0FBQztBQUM5QyxDQUFDO0FBQ0QsTUFBTSxRQUFRLEdBQWM7SUFDMUIsTUFBTSxFQUFFLE1BQU0sQ0FBQyxTQUFTO0lBQ3hCLElBQUksRUFBRTtRQUNKLE1BQU0sRUFBRSxLQUFLO1FBQ2IsS0FBSyxFQUFFLE9BQU87UUFDZCxVQUFVLEVBQUUsTUFBTTtRQUNsQixRQUFRLEVBQUUsUUFBUTtRQUNsQixHQUFHLEVBQUUsQ0FBQztLQUNQO0NBQ0YsQ0FBQztBQUNGLE1BQU0sU0FBUyxHQUFjO0lBQzNCLE1BQU0sRUFBRSxNQUFNLENBQUMsYUFBYTtJQUM1QixJQUFJLEVBQUU7UUFDSixPQUFPLEVBQUUseUJBQXlCO1FBQ2xDLFlBQVksRUFBRSxJQUFJLElBQUksQ0FBQyxJQUFJLElBQUksRUFBRSxDQUFDLE9BQU8sRUFBRSxHQUFHLEVBQUUsR0FBRyxFQUFFLEdBQUcsRUFBRSxHQUFHLElBQUksQ0FBQztLQUNuRTtDQUNGLENBQUM7QUFDRixPQUFPLENBQUMsR0FBRyxDQUFDLGVBQWUsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDO0FBQ3ZDLE9BQU8sQ0FBQyxHQUFHLENBQUMsZUFBZSxDQUFDLFNBQVMsQ0FBQyxDQUFDLENBQUMifQ==
