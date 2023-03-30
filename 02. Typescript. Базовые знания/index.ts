@@ -179,6 +179,7 @@ const startServer2: (
   protocol: "http" | "https",
   port: 3000 | 3001
 ): "Server started" => {
+  console.log(`Server started on ${protocol}://server:${port}`);
   return "Server started";
 };
 startServer2(serverConfig.protocol, serverConfig.port); //без {}на 171 - ошибка!
