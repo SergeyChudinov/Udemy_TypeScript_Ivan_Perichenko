@@ -250,7 +250,7 @@ type T0 = any | unknown; // => any
 type T1 = number | unknown; // => unknown
 type T2 = any & unknown; // => any
 type T3 = number & unknown; // => number
-//33. Запросы типов
+//33. Запросы типов  // data: typeof dataFromControl
 const dataFromControl = {
   water: 200,
   el: 350,
